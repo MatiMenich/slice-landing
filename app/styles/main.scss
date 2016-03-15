@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700italic,700,300,300italic,500italic,500,400italic);
+
+@import "overrides";
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+@import "mixins";
+@import "utils";
+@import "swiper";
+@import "custom_styles";
+@import "sidemenu";
+@import "everyone";
+@import "footer";
+@import "restaurant";

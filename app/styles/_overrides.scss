@@ -1,0 +1,29 @@
+// Colors
+$light                     : #fff !default;
+$brand-success             : #27FFE0 !default;
+$gray                      : #313131 !default;
+$gray-base                 : #212121 !default;
+$light-gray                : #3d3d3d !default;
+
+// Globals
+$body-bg                   : #212121 !default;
+$text-color                : $light !default;
+$link-color                : $brand-success !default;
+$font-family-sans-serif    : "Ubuntu", sans-serif !default;
+$headings-font-weight      : 800 !default;
+
+// Buttons
+$btn-success-color         : $gray !default;
+
+// Jumbotron
+$jumbotron-bg              : $gray !default;
+
+// Well
+$well-bg                   : $gray !default;
+$well-border               : none !default;
+
+// Navbar
+$navbar-inverse-bg:                         transparent !default;
+$navbar-inverse-link-color : $light;
+$navbar-inverse-link-hover-color:           $brand-success !default;
+$navbar-height             : 110px !default;

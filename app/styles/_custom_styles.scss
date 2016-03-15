@@ -1,0 +1,202 @@
+.btn-lg {
+  padding: 16px 40px;
+  border-radius: 8px;
+}
+
+.btn-clear {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+
+  &:hover, &:focus, &.focus {
+    color: $brand-success;
+    background: #212121;
+    border: 1px solid #212121;
+    text-decoration: none;
+  }
+}
+
+.mobile-logo {
+  width: 60%;
+}
+
+.lead {
+  color: #666;
+}
+
+.navbar-nav > li > a {
+  font-size: 16px;
+}
+
+.store-buttons {
+  img {
+    width: 160px;
+    display: inline-block;
+
+    + img {
+      margin-left: 20px;
+    }
+  }
+}
+
+// Navbar
+
+.navbar-static-top {
+  position: absolute;
+  width:100%;
+  left: 0;
+  top: 0;
+}
+
+.navbar-brand {
+  position: relative;
+  padding: 0 !important;
+}
+
+#navbar-fixed {
+  background: rgba($gray-base, 0.9);
+  min-height: 70px;
+
+  .navbar-brand {
+    line-height: 10px;
+    height: 70px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  @include transition(all, .2s, ease);
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+#navbar-fixed.move-up {
+  -webkit-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+#navbar-mobile {
+  @include transition(all, .2s, ease);
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+#navbar-mobile.move-up {
+  -webkit-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+.logo {
+  width: 125px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// Animated buttons
+
+.opening-button {
+  cursor: pointer;
+  position: relative;
+  width: 180px; height: 60px;
+  display: inline-block;
+
+  + .opening-button {
+    margin-left: 20px;
+  }
+
+  .outer-shape {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    background-repeat: no-repeat;
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 40% 100%, 60% 0, 60% 0, 40% 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 40% 100%, 60% 0, 60% 0, 40% 100%, 100% 100%, 100% 0%);
+    @include transition(all, .3s, ease-in-out);
+  }
+
+  .inner-shape {
+    @extend .outer-shape;
+    -webkit-clip-path: polygon(60% 0, 60% 0, 40% 100%, 40% 100%);
+    clip-path: polygon(60% 0, 60% 0, 40% 100%, 40% 100%);
+  }
+
+  &:hover {
+    .outer-shape{
+      -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 0%);
+      clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 0%);
+    }
+
+    .inner-shape{
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}
+
+.button-playstore {
+  .outer-shape {
+    background-image: url('../images/playstore-white.svg');
+  }
+
+  .inner-shape {
+    background-image: url('../images/playstore-highlight.svg');
+  }
+}
+
+.button-appstore {
+  .outer-shape {
+    background-image: url('../images/appstore-white.svg');
+  }
+
+  .inner-shape {
+    background-image: url('../images/appstore-highlight.svg');
+  }
+}
+
+//Sections
+
+section {
+  position: relative;
+}
+
+section.section-gray {
+  background-color: $gray;
+}
+
+section.section-light-gray {
+  background-color: $light-gray;
+}
+
+.logo-supchile {
+  width: 200px;
+}
+
+// Responsive styles 
+
+@media (max-width: $screen-xs-max) {
+
+  .lead {
+    margin-bottom: 10px;
+  }
+
+  .opening-button {
+    width: 100%; height: 100%;
+
+    .outer-shape {
+      background-size: 100% 100%;
+    }
+  }
+}

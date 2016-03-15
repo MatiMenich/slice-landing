@@ -1,0 +1,190 @@
+$animation-duration: 0.3s;
+
+// Side Bar
+
+.sidemenu {
+  @include transform(translate3d(-100%, 0, 0));
+
+  &.sidemenu-open {
+    @include transform(translate3d(0, 0, 0));
+  }
+}
+
+.sidemenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1031;
+  width: 270px;
+  height: 100%;
+  background: #212121;
+  -webkit-transition: all $animation-duration;
+  transition: all $animation-duration;
+  padding-top: 52px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow:    0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+  box-shadow:         0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+}
+
+.sidemenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidemenu ul li {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  @include transform(translate3d(-200px,0,0));
+}
+
+.sidemenu.sidemenu-open ul li{
+  @include transform(translate3d(0,0,0));
+}
+
+.sidemenu ul li a {
+  display: block;
+  padding: 1em 1em 1em 1.2em;
+  color: $brand-success;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-transition: background $animation-duration, box-shadow $animation-duration;
+  transition: background $animation-duration, box-shadow $animation-duration;
+
+  &.main-link {
+    color: $light;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.sidemenu ul li a:hover {
+  background: rgba(0,0,0,0.2);
+  box-shadow: inset 0 -1px rgba(0,0,0,0);
+  color: $light;
+}
+
+.sidemenu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212121;
+  opacity: 0;
+  -webkit-transition: $animation-duration all ease-in-out;
+  transition: $animation-duration all ease-in-out;
+  z-index: -1;
+
+  &.visible {
+    z-index: 99;
+    opacity: .6;
+  }
+}
+
+.close-sidemenu {
+  margin-top: 10px;
+  padding: 0;
+  background: none;
+  border:none;
+  color: $light;
+  float: right;
+  margin-right: 15px;
+  font-size: 20px;
+  z-index: 2;
+  transition: all .3s ease-in-out;
+  
+  opacity: 0;
+  @include transform(translate3d(40px,0,0));
+
+  &.active{
+    opacity: 1;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+    @include transform(translate3d(0,0,0));
+  }
+}
+
+// Mobile navbar 
+
+.navbar-mobile {
+  position: fixed;
+  text-align: center;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  width: 100%;
+  min-height: 52px;
+  background-color: $gray-base; //Fallback
+  background-color: rgba($gray-base, .9);
+
+  .navbar-brand {
+    float: none;
+    display: inline-block;
+    height: 100%;
+
+    .logo {
+      height: 36px;
+      margin-top: 8px;
+      top: 0;
+      transform: none;
+    }
+  }
+}
+
+.btn-menu{
+  cursor: pointer;
+  position: fixed;
+  top: 25px;
+  left: 12px;
+  z-index: 1032;
+  width: 25px;
+  height: 25px;
+}
+
+.hamburger:before, .hamburger:after {
+  transition: $animation-duration/2;
+  transform: all $animation-duration/2 ease-in;
+  content: ""
+}
+
+.hamburger, .hamburger:before, .hamburger:after{
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+  display: block;
+}
+
+.hamburger:before{
+  top: -8px;
+  position: absolute;
+}
+.hamburger:after{
+  top: 8px;
+  position: absolute;
+}
+
+.hamburger{
+  position: absolute;
+  transition: $animation-duration/2;
+}
+
+
+.btn-menu.open{
+  .hamburger{
+    @include transform(rotate3d(0,0,1,45deg));
+    margin-left: 0.2em;
+  }
+  .hamburger:before{
+    opacity: 0;
+    
+  }
+  .hamburger:after{
+    top: 0;
+    @include transform(rotate3d(0,0,1,90deg));
+  }
+}

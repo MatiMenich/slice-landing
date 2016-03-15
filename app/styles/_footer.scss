@@ -1,0 +1,31 @@
+footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .supported-by {
+    text-align: center;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  footer {
+    height: 40px;
+    padding-top: 8px;
+    font-size: 9px;
+
+    p {
+      margin: 0 0 4px;
+    }
+
+    .supported-by {
+      text-align: left;
+    }
+
+    .logo-supchile {
+      position: relative;
+      top: -2px;
+      height: 10px;
+      width: 100px;
+    }
+  }
+}

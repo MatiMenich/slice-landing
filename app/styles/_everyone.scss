@@ -1,0 +1,280 @@
+.hero-main {
+  position: relative;
+  padding-top: $navbar-height;
+  height: 100vh;
+  background: transparent;
+  margin-bottom: 0 !important;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+section.how-it-works {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  min-height: 630px;
+
+  h2 {
+    margin-bottom: 0;
+  }  
+}
+
+.phone {
+  position: relative;
+
+  .content {
+    position: absolute;
+    top: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    width: 168px;
+    height: 302px;
+    background-size: cover;
+  }
+
+  .feature-1 {
+    background-image: url("../images/code.png");
+  }
+
+  .feature-2 {
+    background-image: url("../images/check.png");
+  }
+
+  .feature-3 {
+    background-image: url("../images/split.png");
+  }
+
+  .feature-4 {
+    background-image: url("../images/tip.png");
+  }
+}
+
+.feature {
+  position: relative;
+  $icon-size: 42px;
+  height: 60px;
+  margin-top: 30px;
+
+  .circular-icon {
+    @extend .container-vertical-center;
+    position: absolute;
+    background: none;
+    border: 1px solid $brand-success;
+    color: $gray;
+    height: $icon-size;
+    width: $icon-size;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+
+    &.active {
+      background-color: $brand-success;
+    }
+  }
+
+  .description {
+    @extend .container-vertical-center;
+    margin-left: $icon-size + 40px;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: 200;
+  }
+}
+
+section.restaurant {
+  height: 630px;
+  background: transparent;
+
+  h1 {
+    font-style: italic;
+    font-weight: 200;
+    margin-bottom: 40px;
+  }
+
+  .btn-clear {
+    font-style: italic;
+    font-weight: 200;
+    font-size: 20px;
+  }
+}
+
+section.quote {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 630px;
+
+  h1 {
+    font-weight: 200;
+  }
+}
+
+section.call-to-action {
+  background-color: $brand-success;
+  color: $gray;
+  height: 280px;
+
+  p {
+    font-size: 20px;
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  background-image: url('../images/phone-half.png');
+  background-repeat: no-repeat;
+  background-position: 30% bottom;
+}
+
+.benefit {
+  height: 720px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: bottom;
+
+  h3 {
+    font-size: 26px;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 200;
+  }
+}
+
+// Videos
+
+.video-benefit {
+  width: 100%; height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.benefit-1 {
+  background-image: url("../images/Benefits1.jpg");
+}
+
+.benefit-2 {
+  background-image: url("../images/Benefits2.jpg");
+}
+
+.benefit-3 {
+  background-image: url("../images/Benefits3.jpg");
+}
+
+// Responsive styles
+@media (max-width: $screen-xs-max) {
+  .hero-main {
+    height: 630px !important; //fallback
+    // height: 100vh !important;
+
+    h1 {
+      margin-bottom: 80px !important;
+    }
+  }
+
+  .jumbotron {
+    text-align: center;
+
+    .store-buttons {
+      width: 100%;
+      height: 60px;
+    }
+
+    .opening-button {
+      width: 46%;
+      display: inline-block;
+    }
+
+    .opening-button + .opening-button {
+      margin-left: 10px;
+    }
+  }
+
+  section.how-it-works {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 630px; //fallback
+    min-height: 100vh;
+  }
+
+  .benefit {
+    height: 180px;
+
+    h3 {
+      font-size: 13px;
+    }
+
+    p {
+      font-size: 9px;
+    }
+  }
+
+  section.restaurant {
+    height: 320px;
+
+    h1 {
+      font-weight: 200;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    .btn-clear {
+      font-size: 16px;
+      padding: 10px 22px;
+    }
+  }
+
+  section.quote {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 380px;
+
+    h1 {
+      font-size: 14px;
+    }
+  }
+
+  section.call-to-action {
+    height: 630px !important;
+
+    background-image: url('../images/phone-half.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    p {
+      margin-bottom: 100px;
+    }
+
+    img.thumbs-up {
+      height: 80px;
+      width: 64px;
+      display: inline-block;
+      margin-bottom: 36px; 
+    }
+
+    .store-buttons {
+      margin-bottom: 100px;
+
+      img {
+        width: 44%;
+      }
+    }
+  }
+}
