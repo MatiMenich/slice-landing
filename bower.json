@@ -5,7 +5,8 @@
     "bootstrap-sass": "~3.3.5",
     "font-awesome": "~4.4.0",
     "parallax.js": "~1.4.1",
-    "Swiper": "swiper#~3.3.1"
+    "Swiper": "swiper#~3.3.1",
+    "angular-swiper": "~0.3.2"
   },
   "overrides": {
     "bootstrap-sass": {

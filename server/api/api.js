@@ -1,8 +1,52 @@
 'use strict';
-var request = require('request');
+var request = require('request'),
+    gplay = require('google-play-scraper');
 
 module.exports = function(server) {
     // Create Express API's here
+
+    server.get('/app_reviews', function (req, res) {
+
+      var reviews = [];
+
+      gplay.reviews({
+        appId: 'com.slice.payments',
+        page: 0,
+        lang: 'es',
+        sort: gplay.sort.RATING
+      }).then(function(response){
+        response.forEach(function (review){
+          if(review.score === 5){
+            review.text = review.text.replace('  Opinión completa','');
+            reviews.push(review);
+          }
+        });
+        
+        gplay.reviews({
+          appId: 'com.slice.payments',
+          page: 0,
+          lang: 'en',
+          sort: gplay.sort.RATING
+        }).then(function(response){
+          response.forEach(function (review){
+            if(review.score === 5){
+              reviews.push(review);
+            }
+          });
+          
+          res.status(200).json({
+            code: 200,
+            reviews: reviews
+          });
+
+        }).catch(function(error){
+          console.log('There was an error fetching the reviews!', error);
+        });
+
+      }).catch(function(error){
+        console.log('There was an error fetching the reviews!', error);
+      });
+    });
     
     server.post('/submit_form', function (req, res) {
 

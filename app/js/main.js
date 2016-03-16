@@ -59,6 +59,10 @@ if($('.hero-restaurant').length === 0){
       $('#navbar-mobile').addClass('move-up');
     }
 
+    if (scrollPosition+wHeight+startingOffset >= $('#quote').position().top+wHeight) {
+      $('.line').addClass('active');
+    }
+
     if ( scrollPosition+wHeight+startingOffset >= $('.benefit-2').position().top ) {
       media[0].play();
     }

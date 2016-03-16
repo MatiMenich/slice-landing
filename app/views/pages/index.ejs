@@ -26,10 +26,32 @@
     <script>
       
         'use strict';
-        angular.module('everyone', [])
+        angular.module('everyone', ['ksSwiper'])
         
         .controller('switchCtrl', function ( $scope ) {
             $scope.activePane = 0;        
+        })
+
+        .controller('quoteCtrl', function ( $scope, $http, $timeout ) {
+            $scope.reviews = [];
+            $scope.swiper = {};
+
+            $scope.getReviews = function () {
+                $http({
+                    method: 'GET',
+                    url: '/app_reviews'
+                }).then(function successCallback(response) {
+                    $scope.reviews = response.data.reviews;
+                    $timeout(function(){
+                        $scope.swiper.update();
+                    }, 1000);
+                }, function errorCallback(response) {
+                    console.error(response);
+                });
+            };
+            $scope.onReadySwiper = function (swiper) {
+                $scope.swiper = swiper;
+            };
         });
     
     </script>
@@ -225,11 +247,24 @@
         </div>
     </section>
 
-    <section class="quote section-gray">
+    <section class="quote section-gray" id="quote" ng-controller="quoteCtrl" ng-init="getReviews()">
         <div class="container container-vertical-center">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h1>"Desde que uso Slice, mi vida es bakán. Bájatela al toque"</h1>
+                    <ks-swiper-container class="swiper-container-quote" autoplay="5000" slides-per-view="1" pagination-clickable="false" show-nav-buttons="true" on-ready="onReadySwiper(swiper)" loop="true">
+                        <ks-swiper-slide class="swiper-slide" ng-repeat="review in reviews track by $index">
+                            <div class="review">
+                                <div class="line"></div>
+                                <h1 class="text-italic">“{{review.text}}”</h1>
+                                <div class="author">
+                                    <p>{{review.userName}}<br>
+                                    <span class="date">{{review.date}}</span></p>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                        </ks-swiper-slide>
+                    </ks-swiper-container>
+
                 </div>
             </div>
         </div>
@@ -258,6 +293,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/parallax.js/parallax.min.js"></script>
     <script src="/bower_components/Swiper/dist/js/swiper.jquery.min.js"></script>
+    <script src="/bower_components/angular-swiper/dist/angular-swiper.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
