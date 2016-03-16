@@ -27,12 +27,21 @@
         'use strict';
         angular.module('restaurant', [])
         
-        .controller('formCtrl', function ( $scope ) {
+        .controller('formCtrl', function ( $scope, $http ) {
             $scope.contact = {};
 
             $scope.sendForm = function () {
-                console.log($scope.contact);
-                $scope.contact = {};
+                $http({
+                  method: 'POST',
+                  url: '/submit_form',
+                  data: $scope.contact
+                }).then(function successCallback(response) {
+                    console.log(response);
+                    $scope.contact = {};
+                }, function errorCallback(response) {
+                    console.error(response);
+                    $scope.contact = {};
+                });
             }    
         });
     
