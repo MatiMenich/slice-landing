@@ -42,6 +42,7 @@ if($('.hero-restaurant').length === 0){
   var startingSection = $('#how_it_works');
   var media = $('video');
   var wHeight = $(window).height();
+  var startingOffset = 70;
 
   $(window).on('scroll', function() {
     var scrollPosition = scrollY || pageYOffset;
@@ -58,15 +59,15 @@ if($('.hero-restaurant').length === 0){
       $('#navbar-mobile').addClass('move-up');
     }
 
-    if ( scrollPosition+wHeight+60 >= $('.benefit-2').position().top ) {
+    if ( scrollPosition+wHeight+startingOffset >= $('.benefit-2').position().top ) {
       media[0].play();
     }
 
-    if ( scrollPosition+wHeight+60 >= $('.benefit-3').position().top ) {
+    if ( scrollPosition+wHeight+startingOffset >= $('.benefit-3').position().top ) {
       media[1].play();
     }
 
-    if ( scrollPosition+wHeight+60 >= $('.restaurant').position().top ) {
+    if ( scrollPosition+wHeight+startingOffset >= $('.restaurant').position().top ) {
       media[2].play();
     }
   });
