@@ -57,6 +57,47 @@ section.restaurant-form {
     }
   }
 
+  .progress-button {
+    padding: 16px 62px;
+    border: 1px solid #212121;
+    border-radius: 8px;
+    background: transparent;
+    color: #212121;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+
+    .progress-inner {
+      background: rgba(#212121, 0.6);
+    }
+  }
+
+  .progress-button[disabled], fieldset[disabled] .progress-button {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+  }
+
+  .progress-button-style-fill.progress-button-dir-horizontal .content:after, .progress-button-style-fill.progress-button-dir-horizontal .content:before {
+    top: 200%;
+  }
+  
+  .progress-button-style-fill.progress-button-dir-horizontal.state-error .content, .progress-button-style-fill.progress-button-dir-horizontal.state-success .content {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+
+  .progress-button .content:after{
+    color: #f96e6e;
+  }
+
+  .progress-button .content:before {
+    color: #17BD80;
+  }
+
   .input {
     position: relative;
     z-index: 1;

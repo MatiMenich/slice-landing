@@ -6,7 +6,8 @@
     "font-awesome": "~4.4.0",
     "parallax.js": "~1.4.1",
     "Swiper": "swiper#~3.3.1",
-    "angular-swiper": "~0.3.2"
+    "angular-swiper": "~0.3.2",
+    "angular-progress-button-styles": "~0.1.0"
   },
   "overrides": {
     "bootstrap-sass": {

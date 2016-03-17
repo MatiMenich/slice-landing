@@ -104,7 +104,7 @@
                         </div>
 
                         <h4 class="swiper-title">Encuentra un local para tí</h4>
-                        <p class="content">Busca bares y restaurantes cerca tuyo o <br/>aventúrate y descubre uno nuevo.</p>
+                        <p class="content">Busca bares y restaurantes cerca tuyo o aventúrate.</p>
                     </div>
                     <div class="swiper-slide">
                         <div class="phone">
@@ -113,7 +113,7 @@
                         </div>
 
                         <h4 class="swiper-title">Indícale al mesero que pagarás con Slice</h4>
-                        <p class="content">Nosotros nos encargamos del resto.</p>
+                        <p class="content">Obtén tu código. Nosotros nos encargamos del resto.</p>
                     </div>
                     <div class="swiper-slide">
                         <div class="phone">
@@ -122,7 +122,7 @@
                         </div>
 
                         <h4 class="swiper-title">Comparte la cuenta con tus amigos</h4>
-                        <p class="content">Invita a tus amigos y reparte la cuenta <br/>¡Directo desde la app!</p>
+                        <p class="content">Invítalos, reparte la cuenta y disfruta.</p>
                     </div>
                     <div class="swiper-slide">
                         <div class="phone">
@@ -131,7 +131,7 @@
                         </div>
 
                         <h4 class="swiper-title">Paga cuando estés listo</h4>
-                        <p class="content">Olvídate de la tarjeta. No más clonaciones.<br/> Y sobretodo, no más esperas</p>
+                        <p class="content">Olvídate de la tarjeta. No más clonaciones. <br>No más esperas.</p>
                     </div>
                 </div>
                 <!-- If we need pagination -->
@@ -156,28 +156,28 @@
                         <div class="circular-icon" ng-class="{'active' : activePane == 0}"><i class="fa fa-map-marker"></i></div>
                         <div class="description">
                             <h4>Encuentra un local para tí</h4>
-                            <p>Busca bares y restaurantes cerca tuyo o aventúrate y <br/>descubre uno nuevo</p>
+                            <p>Busca bares y restaurantes cerca tuyo o aventúrate.</p>
                         </div>
                     </div>
                     <div class="feature text-left" ng-mouseover="activePane = 1">
                         <div class="circular-icon" ng-class="{'active' : activePane == 1}"><i class="fa fa-hand-pointer-o"></i></div>
                         <div class="description">
                             <h4>Indícale al mesero que pagarás con Slice</h4>
-                            <p>Nosotros nos encargamos del resto</p>
+                            <p>Obtén tu código. Nosotros nos encargamos del resto.</p>
                         </div>
                     </div>
                     <div class="feature text-left" ng-mouseover="activePane = 2">
                         <div class="circular-icon" ng-class="{'active' : activePane == 2}"><i class="fa fa-users"></i></div>
                         <div class="description">
-                            <h4>Divide la cuenta con tus amigos</h4>
-                            <p>Simplemente invita a tus amigos y reparte la cuenta <br/>¡Directo desde la aplicación!</p>
+                            <h4>Comparte la cuenta con tus amigos</h4>
+                            <p>Invítalos, reparte la cuenta y disfruta.</p>
                         </div>
                     </div>
                     <div class="feature text-left" ng-mouseover="activePane = 3">
                         <div class="circular-icon" ng-class="{'active' : activePane == 3}"><i class="fa fa-check"></i></div>
                         <div class="description">
                             <h4>Paga cuando estés listo</h4>
-                            <p>Olvídate de la tarjeta. No más clonaciones. <br/>Y sobretodo, no más esperas</p>
+                            <p>Olvídate de la tarjeta. No más clonaciones. <br>No más esperas.</p>
                         </div>
                     </div>
                 </div>
@@ -195,8 +195,8 @@
         <div class="container container-vertical-center" style="z-index: 9;">
             <div class="row">
                 <div class="col-xs-offset-6 col-xs-6">
-                    <h3>Retírate cuando quieras</h3>
-                    <p>¿Apurado? ¿Con ganas de salir? Te permitimos manejar tu tiempo. Cuando quieras podrás salir y seguir disfrutando de tu día.</p>
+                    <h3>Retírate cuando estés listo</h3>
+                    <p>¿Apurado? ¿Mesa grande? Independiente de cuántos sean podrás pagar rápido y seguir disfrutando de tu día.</p>
                 </div>
             </div>
         </div>
@@ -213,7 +213,7 @@
             <div class="row">
                 <div class="col-xs-6">
                     <h3>Disfruta la compañía</h3>
-                    <p>Olvida los malos ratos. Cuanto paga cada uno, cuánto es la propina ... Relájate y disfruta la comida o bebida. Calculamos todo por tí y tus amigos.</p>
+                    <p>Olvida los malos ratos. Relájate y disfruta tu comida, <br class="hidden-xs hidden-sm hidden-md">nosotros calculamos todo por tí y tus amigos.</p>
                 </div>
             </div>
         </div>
@@ -230,7 +230,7 @@
             <div class="row">
                 <div class="col-xs-offset-6 col-xs-6">
                     <h3>Más seguro</h3>
-                    <p>No te preocupes por perder tu tarjeta nunca más. Sal tranquilo sabiendo que no serás víctima de clonaciones o de robos. Nuestro sistema opera bajo estándares bancarios.</p>
+                    <p>No te preocupes por perder tu tarjeta nunca más. Sal tranquilo sabiendo que no serás víctima de clonaciones o de robos.</p>
                 </div>
             </div>
         </div>
@@ -293,9 +293,12 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/parallax.js/parallax.min.js"></script>
     <script src="/bower_components/Swiper/dist/js/swiper.jquery.min.js"></script>
-    <script src="/bower_components/angular-swiper/dist/angular-swiper.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <script type="text/javascript">
+        !function(e,i,r){"use strict";function t(){for(var e=[],i="0123456789abcdef",r=0;36>r;r++)e[r]=i.substr(Math.floor(16*Math.random()),1);e[14]="4",e[19]=i.substr(3&e[19]|8,1),e[8]=e[13]=e[18]=e[23]="-";var t=e.join("");return t}function a(){return{restrict:"E",transclude:!0,scope:{onReady:"&",slidesPerView:"=",slidesPerColumn:"=",spaceBetween:"=",parallax:"=",parallaxTransition:"@",paginationIsActive:"=",paginationClickable:"=",showNavButtons:"=",showScrollBar:"=",loop:"=",autoplay:"=",initialSlide:"=",containerCls:"@",wrapperCls:"@",paginationCls:"@",slideCls:"@",direction:"@",swiper:"=",overrideParameters:"="},controller:["$scope","$element","$timeout",function(e,r,a){var n=t();e.swiper_uuid=n;var s={slidesPerView:e.slidesPerView||1,slidesPerColumn:e.slidesPerColumn||1,spaceBetween:e.spaceBetween||0,direction:e.direction||"horizontal",loop:e.loop||!1,initialSlide:e.initialSlide||0,showNavButtons:!1};i.isUndefined(e.autoplay)||"number"!=typeof e.autoplay||(s=i.extend({},s,{autoplay:e.autoplay})),e.paginationIsActive===!0&&(s=i.extend({},s,{paginationClickable:e.paginationClickable||!0,pagination:"#paginator-"+e.swiper_uuid})),e.showNavButtons===!0&&(s.nextButton="#nextButton-"+e.swiper_uuid,s.prevButton="#prevButton-"+e.swiper_uuid),e.showScrollBar===!0&&(s.scrollbar="#scrollBar-"+e.swiper_uuid),e.overrideParameters&&(s=i.extend({},s,e.overrideParameters)),a(function(){var t=null;i.isObject(e.swiper)?(e.swiper=new Swiper(r[0].firstChild,s),t=e.swiper):t=new Swiper(r[0].firstChild,s),i.isUndefined(e.onReady)||e.onReady({swiper:t})})}],link:function(e,r){var t=e.swiper_uuid,a="paginator-"+t,n="prevButton-"+t,s="nextButton-"+t,o="scrollBar-"+t,l=r[0];i.element(l.querySelector(".swiper-pagination")).attr("id",a),i.element(l.querySelector(".swiper-button-next")).attr("id",s),i.element(l.querySelector(".swiper-button-prev")).attr("id",n),i.element(r[0].querySelector(".swiper-scrollbar")).attr("id",o)},template:'<div class="swiper-container {{containerCls}}"><div class="parallax-bg" data-swiper-parallax="{{parallaxTransition}}" ng-show="parallax"></div><div class="swiper-wrapper {{wrapperCls}}" ng-transclude></div><div class="swiper-pagination {{paginationCls}}"></div><div class="swiper-button-next" ng-show="showNavButtons"></div><div class="swiper-button-prev" ng-show="showNavButtons"></div><div class="swiper-scrollbar" ng-show="showScrollBar"></div></div>'}}function n(){return{restrict:"E",require:"^ksSwiperContainer",transclude:!0,template:'<div class="swiper-slide" ng-transclude></div>',replace:!0}}i.module("ksSwiper",[]).directive("ksSwiperContainer",a).directive("ksSwiperSlide",n)}(window,angular,void 0);
+    </script>
     
     <!-- build:js scripts/plugins.js -->
     

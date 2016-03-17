@@ -15,6 +15,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/Swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/angular-progress-button-styles/dist/angular-progress-button-styles.min.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
@@ -25,12 +26,14 @@
     <script>
       
         'use strict';
-        angular.module('restaurant', [])
+        angular.module('restaurant', ['angular-progress-button-styles'])
         
-        .controller('formCtrl', function ( $scope, $http ) {
+        .controller('formCtrl', function ( $scope, $http, $q ) {
             $scope.contact = {};
 
             $scope.sendForm = function () {
+                var defer = $q.defer();
+
                 $http({
                   method: 'POST',
                   url: '/submit_form',
@@ -38,11 +41,15 @@
                 }).then(function successCallback(response) {
                     console.log(response);
                     $scope.contact = {};
+                    defer.resolve();
                 }, function errorCallback(response) {
                     console.error(response);
                     $scope.contact = {};
+                    defer.reject();
                 });
-            }    
+
+                return defer.promise;
+            }; 
         });
     
     </script>
@@ -60,7 +67,7 @@
         <div class="jumbotron hero-restaurant">
             <div class="container container-vertical-center">
                 <img class="mobile-logo visible-xs-inline" src="images/slice-logo-shadow.png" />
-                <h1 class="text-italic"><span class="text-medium">Aumenta la eficiencia</span><br> <span class="text-light">de tu proceso de pago</span> </h1>
+                <h1 class="text-italic"><span class="text-medium">Aumenta tus ingresos</span><br> <span class="text-light">y conoce a tus clientes</span> </h1>
                 <p><a class="btn btn-lg btn-success" href="#form"><strong>Registra</strong> <i>tu Negocio</i></a></p>
             </div>
         </div>
@@ -75,17 +82,17 @@
                     <div class="swiper-slide">
                        <img src="images/chart.svg" class="icon-benefit" />
                        <h4>Aumenta tus ingresos</h4>
-                       <p>Tus clientes podrán irse apenas estén listos, de esta manera aumentas tu rotación. Podrás atender a más gente, especialmente en las difíciles horas punta.</p>
+                       <p>Pasa de 12 minutos a 1 segundo, eliminando el tiempo muerto del pago. Tus clientes podrán irse apenas terminen su comida, maximizando tu rotación.</p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="images/time.svg" class="icon-benefit" />
-                        <h4>Mejora lo que entregas</h4>
-                        <p>Tus clientes podrán irse apenas estén listos, de esta manera aumentas tu rotación. Podrás atender a más gente, especialmente en las difíciles horas punta.</p>
+                        <img src="images/people.svg" class="icon-benefit" />
+                        <h4>Accede a inteligencia de Negocios</h4>
+                        <p>Conoce a tus clientes, mediante datos de su comportamiento y motivaciones. Tus clientes querrán volver tu restaurant.</p>
                     </div>
                     <div class="swiper-slide">
-                       <img src="images/people.svg" class="icon-benefit" />
-                        <h4>Conoce a tu clientes</h4>
-                        <p>Tus clientes podrán irse apenas estén listos, de esta manera aumentas tu rotación. Podrás atender a más gente, especialmente en las difíciles horas punta.</p>
+                       <img src="images/mobile-payments.svg" class="icon-benefit" />
+                        <h4>Pagos móviles ahora</h4>
+                        <p>Mantente a la vanguardia de la tecnología y adelántate a tu competencia.</p>
                     </div>
                 </div>
                 <!-- If we need pagination -->
@@ -101,17 +108,17 @@
                 <div class="col-sm-4">
                     <img src="images/chart.svg" class="icon-benefit" />
                     <h4>Aumenta tus ingresos</h4>
-                    <p>Tus clientes podrán irse apenas estén listos, de esta manera aumentas tu rotación. Podrás atender a más gente, especialmente en las difíciles horas punta.</p>
-                </div>
-                <div class="col-sm-4">
-                    <img src="images/time.svg" class="icon-benefit" />
-                    <h4>Mejora lo que entregas</h4>
-                    <p>Tus clientes podrán irse apenas estén listos, de esta manera aumentas tu rotación. Podrás atender a más gente, especialmente en las difíciles horas punta.</p>
+                    <p>Pasa de 12 minutos a 1 segundo, eliminando el tiempo muerto del pago. Tus clientes podrán irse apenas terminen su comida, maximizando tu rotación. </p>
                 </div>
                 <div class="col-sm-4">
                     <img src="images/people.svg" class="icon-benefit" />
-                    <h4>Conoce a tu clientes</h4>
-                    <p>Tus clientes podrán irse apenas estén listos, de esta manera aumentas tu rotación. Podrás atender a más gente, especialmente en las difíciles horas punta.</p>
+                    <h4>Accede a inteligencia de negocios</h4>
+                    <p>Conoce a tus clientes, mediante datos de su comportamiento y motivaciones. Tus clientes querrán volver tu restaurant.</p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="images/mobile-payments.svg" class="icon-benefit" />
+                    <h4>Pagos móviles ahora</h4>
+                    <p>Mantente a la vanguardia de la tecnología y adelántate a tu competencia.</p>
                 </div>
             </div>
         </div>
@@ -130,14 +137,14 @@
                 <div class="col-xs-12">
                     <div class="text-left">
                         <h2>Métricas y estadísticas</h2>
-                        <p>Minions ipsum belloo! Nostrud daa. Commodo ad dolore officia qui gelatooo consectetur. Sit amet aute wiiiii bee do bee do bee do duis uuuhhh.</p>
+                        <p>Toda la información de tu restaurant en tus manos. Define lo que te interesa para que estés al tanto de lo que te importa.</p>
                     </div>
                 </div>
             </div>
             <div class="flex-container hidden-xs">
                 <div class="text">
                     <h2>Métricas y estadísticas</h2>
-                    <p>Minions ipsum belloo! Nostrud daa. Commodo ad dolore officia qui gelatooo consectetur. Sit amet aute wiiiii bee do bee do bee do duis uuuhhh.</p>
+                    <p>Toda la información de tu restaurant en tus manos. Define lo que te interesa para que estés al tanto de lo que te importa.</p>
                 </div>
                 <div class="image">
                     <img class="dashboard-ss" src="images/metrics.png">
@@ -159,7 +166,7 @@
                 <div class="col-xs-12">
                     <div class="text-right">
                         <h2>Reporte de incidentes</h2>
-                        <p>Minions ipsum belloo! Nostrud daa. Commodo ad dolore officia qui gelatooo consectetur. Sit amet aute wiiiii bee do bee do bee do duis uuuhhh.</p>
+                        <p>Mantén el control de tu restaurant, incluso si no estas presente. Uno ojo sobre tu local a toda hora.</p>
                     </div>
                 </div>
             </div>
@@ -169,7 +176,7 @@
                 </div>
                 <div class="text">
                     <h2>Reporte de incidentes</h2>
-                    <p>Minions ipsum belloo! Nostrud daa. Commodo ad dolore officia qui gelatooo consectetur. Sit amet aute wiiiii bee do bee do bee do duis uuuhhh.</p>
+                    <p>Mantén el control de tu restaurant, incluso si no estas presente. Uno ojo sobre tu local a toda hora.</p>
                 </div>
             </div>
         </div>
@@ -188,14 +195,14 @@
                 <div class="col-xs-12">
                     <div class="text-left">
                         <h2>Relación con el consumidor</h2>
-                        <p>Minions ipsum belloo! Nostrud daa. Commodo ad dolore officia qui gelatooo consectetur. Sit amet aute wiiiii bee do bee do bee do duis uuuhhh.</p>
+                        <p>Con Slice, tendrás acceso a un CRM mostrándote no sólo quiénes son tus consumidores, si no que también la frecuencia en que te visitan, que consumen y más.</p>
                     </div>
                 </div>
             </div>
             <div class="flex-container hidden-xs">
                 <div class="text">
                     <h2>Relación con el consumidor</h2>
-                    <p>Minions ipsum belloo! Nostrud daa. Commodo ad dolore officia qui gelatooo consectetur. Sit amet aute wiiiii bee do bee do bee do duis uuuhhh.</p>
+                    <p>Con Slice, tendrás acceso a un CRM mostrándote no sólo quiénes son tus consumidores, si no que también la frecuencia en que te visitan, qué consumen y más.</p>
                 </div>
                 <div class="image">
                     <img class="dashboard-ss" src="images/crm.png">
@@ -241,7 +248,7 @@
                             </label>
                         </span>
                         <span class="input input--hoshi">
-                            <button type="submit" class="btn btn-lg btn-submit pull-right" ng-disabled="form.$invalid" ng-click="sendForm()">Enviar</button>
+                            <button progress-button="sendForm()" class="pull-right" ng-disabled="form.$invalid">Enviar</button>
                         </span>
                     </form>
                 </div>
@@ -259,6 +266,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/parallax.js/parallax.min.js"></script>
     <script src="/bower_components/Swiper/dist/js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-progress-button-styles/dist/angular-progress-button-styles.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
