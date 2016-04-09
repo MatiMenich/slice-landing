@@ -29,6 +29,13 @@
 }
 
 .store-buttons {
+  a {
+    display: inline-block;
+
+    + a {
+      margin-left: 20px;
+    }
+  }
   img {
     width: 160px;
     display: inline-block;
