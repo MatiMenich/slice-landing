@@ -24,10 +24,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script>
-      
+
         'use strict';
         angular.module('restaurant', ['angular-progress-button-styles'])
-        
+
         .controller('formCtrl', function ( $scope, $http, $q ) {
             $scope.contact = {};
 
@@ -49,9 +49,9 @@
                 });
 
                 return defer.promise;
-            }; 
+            };
         });
-    
+
     </script>
     <% include ../partials/crisp %>
 </head>
@@ -97,11 +97,11 @@
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-                
+
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-                
+
             </div>
 
             <div class="row text-center hidden-xs">
@@ -119,6 +119,68 @@
                     <img src="images/mobile-payments.svg" class="icon-benefit" />
                     <h4>Pagos móviles ahora</h4>
                     <p>Accede a tecnología de vanguardia. Tus clientes quieren pagar con su celular, nosotros te damos la posibilidad de hacer la experticia del pago fácil, entretenida y rápida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pos-integrations">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2><span class="text-light">Nos integramos</span>&nbsp;<span class="text-medium">con tu punto de venta</span></h2>
+                    <p class="lead text-italic">Crea una experiencia de pagos fluida para tu staff y tus clientes</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <div class="pos-description">
+                        <div class="pos-image">
+                            <img src="images/micros.png" />
+                        </div>
+                        <p class="hidden-xs">Micros</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <div class="pos-description">
+                        <div class="pos-image">
+                            <img src="images/positouch.png" />
+                        </div>
+                        <p class="hidden-xs">Positouch</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <div class="pos-description">
+                        <div class="pos-image">
+                            <img src="images/aloha.png" />
+                        </div>
+                        <p class="hidden-xs">Aloha</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <div class="pos-description">
+                        <div class="pos-image">
+                            <img src="images/methodo.png" />
+                        </div>
+                        <p class="hidden-xs">Methodo</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <div class="pos-description">
+                        <div class="pos-image">
+                            <img src="images/resto.png" />
+                        </div>
+                        <p class="hidden-xs">Restô</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <div class="pos-description">
+                        <div class="soon-more-pos-image">
+                            <img src="images/cogwheel.png" class="hidden-xs" />
+                            <p class="visible-xs-block">Pronto más ...</p>
+                        </div>
+                        <p class="hidden-xs">Pronto más ...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,9 +320,9 @@
             </div>
         </div>
     </section>
-    
+
     <% include ../partials/footer %>
-        
+
     <!-- build:js js/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
@@ -269,37 +331,37 @@
     <script type="text/javascript" src="/bower_components/angular-progress-button-styles/dist/angular-progress-button-styles.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/plugins.js -->
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    
+
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-    
+
     <!-- endbuild -->
 
     <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.1/scrollreveal.min.js"></script>
-    
+
     <!-- build:js js/main.js -->
     <script src="js/main.js"></script>
     <!-- endbuild -->

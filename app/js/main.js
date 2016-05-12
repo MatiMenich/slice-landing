@@ -101,6 +101,13 @@ if($('.hero-restaurant').length > 0){
     naturalHeight: '1280'
   });
 
+  $('.pos-integrations').parallax({
+    imageSrc: 'images/busy-bar.jpg',
+    position: 'center',
+    naturalWidth: '1920',
+    naturalHeight: '1440'
+  });
+
   var navbarOpen = false;
 
   var startingSection = $('#benefits-restaurant');

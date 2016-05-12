@@ -16,6 +16,64 @@ section.benefits-restaurant {
   }
 }
 
+section.pos-integrations {
+  background: transparent;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: 400px;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .lead {
+    color: #fff;
+  }
+
+  .pos-description {
+    width: 100%;
+    height: 120px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .pos-image {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+
+      height: 100px;
+
+      img {
+        height: auto;
+        max-width: 120px;
+      }
+    }
+
+    .soon-more-pos-image {
+      @extend .pos-image;
+
+      img {
+        height: 60px;
+        width: 6
+        0px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 200;
+    }
+
+
+  }
+}
+
 section.dashboard {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -84,7 +142,7 @@ section.restaurant-form {
   .progress-button-style-fill.progress-button-dir-horizontal .content:after, .progress-button-style-fill.progress-button-dir-horizontal .content:before {
     top: 200%;
   }
-  
+
   .progress-button-style-fill.progress-button-dir-horizontal.state-error .content, .progress-button-style-fill.progress-button-dir-horizontal.state-success .content {
     -webkit-transform: translateY(-200%);
     transform: translateY(-200%);
@@ -318,6 +376,37 @@ section.restaurant-form {
       font-size: 20px;
       margin-top: 26px;
       margin-bottom: 26px;
+    }
+  }
+
+  section.pos-integrations {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .lead {
+      font-size: 13px;
+    }
+
+    .pos-description {
+      width: 100%;
+      height: 80px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .pos-image {
+        height: 60px;
+      }
+
+      .soon-more-pos-image {
+        img {
+          height: 36px;
+          width: 36px;
+        }
+      }
     }
   }
 
